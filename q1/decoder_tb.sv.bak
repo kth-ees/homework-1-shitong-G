@@ -9,13 +9,6 @@ module decoder_tb;
     .binary(binary),
     .one_hot(one_hot)
   );
-  initial begin
-      for (int i = 0; i < 16; i++) begin
-          binary = i;
-          #10;
-          $display("binary=%0d, one_hot=%b", binary, one_hot);
-      end
-      $finish;
-  end
+
   // Complete your testbench here
 endmodule

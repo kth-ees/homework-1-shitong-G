@@ -6,4 +6,20 @@ module bin2bcd_tb;
   logic carry;
 
   // complete your tb
+
+  bin2bcd dut(
+    .binary(binary),
+    .bcd(bcd),
+    .carry(carry)
+  );	
+
+  initial begin
+    for(int i=0;i<16;i++) begin
+      binary = i[3:0];
+      #10;
+      $display("%4t | %b | %b | %b", $time, binary, bcd, carry);
+
+    end
+    $finish;
+  end
 endmodule
